@@ -1,0 +1,23 @@
+<!-- template with two combobox or dropdown base component
+   to show controlling and dependent picklist fields with its attributes-->
+<template>
+  <lightning-layout horizontal-align="space">
+    <lightning-layout-item padding="around-small"> 
+        <lightning-combobox
+            name="progress"
+            label="Status"
+            value={parentValue}
+            options={controlOptions}
+            onchange={handleControlChange} ></lightning-combobox>
+    </lightning-layout-item>
+    <lightning-layout-item padding="around-small">
+        <lightning-combobox
+            class="dependent"
+            name="progress"
+            label="Status"
+            value={dependentValue}
+            options={dependentOptions}
+            onchange={handleDependentChange} disabled={isDisabled}></lightning-combobox>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

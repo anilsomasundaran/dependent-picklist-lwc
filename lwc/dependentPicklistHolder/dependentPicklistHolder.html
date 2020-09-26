@@ -1,0 +1,41 @@
+<template>
+    <template if:true={isApex}>
+        <lightning-card  variant="Narrow"  title="Dependent Picklist Using Apex" icon-name="standard:account">
+            <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+            <p class="slds-p-horizontal_small">
+                <c-dependent-picklist-apex object-api-name='Account' 
+                control-field-name='Country__c' 
+                dependent-field-name='State__c'
+                dependent-value ='' parent-value='' 
+                oncontrolchange={handleControlPLChange}
+                ondependentchange={handleDependentPLchange}
+                ></c-dependent-picklist-apex>
+            </p>
+        </lightning-card>
+    </template>
+    <template if:true={isObjectInfo}>
+        <lightning-card  variant="Narrow"  title="Dependent Picklist Using Object Info API" icon-name="standard:account">
+            <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+            <p class="slds-p-horizontal_small">
+                <c-dependent-picklist object-api-name='Account' 
+                control-field-name='Country__c' 
+                dependent-field-name='State__c'
+                dependent-value ='' parent-value='' 
+                oncontrolchange={handleControlPLChange}
+                ondependentchange={handleDependentPLchange}>
+                </c-dependent-picklist>
+            </p>
+        </lightning-card>
+    </template>
+    <template if:true={isRecordForm}>
+        <lightning-card  variant="Narrow"  title="Dependent Picklist Using Record Edit Form" icon-name="standard:account">
+            <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+                <p class="slds-p-horizontal_small">
+                    <c-dependent-picklist-record-edit-form object-api-name='Account' 
+                        control-field-name='Country__c' 
+                        dependent-field-name='State__c' record-type-id ="012000000000000AAA">
+                    </c-dependent-picklist-record-edit-form>
+                </p>
+        </lightning-card>
+    </template>
+</template>

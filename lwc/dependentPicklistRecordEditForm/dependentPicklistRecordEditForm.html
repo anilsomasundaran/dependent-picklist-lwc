@@ -1,0 +1,18 @@
+<template>
+    <!-- ligthning record edit form with object name and record type id as parameter-->
+    <lightning-record-edit-form object-api-name={objectApiName} 
+    record-type-id ={recordTypeId}>
+        <lightning-layout horizontal-align="space">
+            <lightning-layout-item padding="around-small"> 
+                <!-- Input field for controlling picklist-->
+                <lightning-input-field field-name={controlFieldName} onchange={handleControlChange} value={parentValue}>
+                </lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small"> 
+                  <!-- Input field for dependent picklist with a change event handler -->
+                <lightning-input-field field-name={dependentFieldName} onchange={handleDependentChange} value={dependentValue}>
+                </lightning-input-field>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-record-edit-form>
+</template>
