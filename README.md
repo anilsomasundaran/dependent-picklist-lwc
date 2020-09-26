@@ -1,2 +1,2 @@
 # dependent-picklist-lwc
-Custom dependent picklist developed in LWC - Salesforce
+Visit www.techevangel.com for more details on this component
